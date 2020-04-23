@@ -1,13 +1,12 @@
 <?php echo $this->inc('header.php', ['title' => 'Youtube Downloader']); ?>
-	<div class="well">
+	<div class="well mt-5 card">
+	<div class="card-body">
 		<form class="" method="get" id="download" action="getvideo.php">
 			<h1 class="form-download-heading">Youtube Downloader</h1>
 				<div class="input-group">
 				  <input type="text" name="videoid" id="videoid" class="form-control input-lg" placeholder="YouTube Link or VideoID" autofocus>
 					<input type="hidden" name="type" id="type" value="Download"/>
-					<span class="input-group-btn">
-					<input class="btn btn-primary btn-lg" type="submit" name="submit" value="Start Download" />
-				  </span>
+					<button class="btn btn-primary btn-md" type="submit" name="submit"><i class="icon ion-md-paper-plane"></i> Start Download</button>
 				</div><!-- /input-group -->
 			<div class="video-info">
 				<p>Valid inputs are YouTube links or VideoIDs:</p>
@@ -27,8 +26,9 @@
 		}
 		?>
 		<hr />
-		<p class="muted pull-right"><a href="https://github.com/jeckman/YouTube-Downloader" target="_blank">Youtube Downloader <?php echo $this->get('app_version', ''); ?></a> is licensed under GPL 2.</p>
+		<p class="muted pull-right"><a href="https://github.com/jeckman/YouTube-Downloader" target="_blank">Youtube Downloader <?php echo $this->get('app_version', ''); ?></a> is licensed under GPL 2. <i class="icon ion-md-heart"></i></p>
 		<div class="clearfix"></div>
 		</form>
+	</div>
 	</div>
 <?php echo $this->inc('footer.php'); ?>
