@@ -25,19 +25,19 @@ $getVideo = '<div class="well">
 		foreach($this->get('streams', []) as $format) {
 			if ($format['size'] != 0){
 				$getVideo .= '<li>
-					<a class="btn btn-default btn-type disabled" href="#">'.$format['type'].' - '.$format['quality'].'</a>';
+					<a class="btn btn-light btn-type disabled" href="#">'.$format['type'].' - '.$format['quality'].'</a>';
 				if ($format['show_direct_url'] === true) {
-					$getVideo .= '<a class="btn btn-default btn-download" href="'.$format['direct_url'].'" class="mime"><i class="glyphicon glyphicon-download-alt"></i> Direct</a>';
+					$getVideo .= '<a class="btn btn-light btn-download" href="'.$format['direct_url'].'" class="mime"><i class="icon ion-md-download"></i> Direct</a>';
 				}
 				if ($format['show_proxy_url'] === true) {
-					$getVideo .= '<a class="btn btn-primary btn-download" href="'.$format['proxy_url'].'" class="mime"><i class="glyphicon glyphicon-download-alt"></i> Proxy</a>';
+					$getVideo .= '<a class="btn btn-primary btn-download mr-2" href="'.$format['proxy_url'].'" class="mime"><i class="icon ion-md-download"></i> Proxy</a>';
 				}
-				$getVideo .= '<div class="label label-warning">'.$format['size'].'</div>
-				<div class="label label-default">'.$format['itag'].'</div>
+				$getVideo .= '<div class="badge badge-warning">'.$format['size'].'</div>
+				<div class="badge badge-secondary">'.$format['itag'].'</div>
 			</li>';
 			}
 			else
-				$getVideo .= '<a class="btn btn-danger btn-block" href="#" onclick="location.reload();"><i class="glyphicon glyphicon-refresh"></i> Retry</a>';
+				$getVideo .= '<a class="btn btn-danger btn-block" href="#" onclick="location.reload();"><i class="icon ion-md-refresh"></i> Retry</a>';
 		}
 		$getVideo .= '</ul>
 		<hr />
@@ -45,35 +45,35 @@ $getVideo = '<div class="well">
 		<ul class="dl-list">';
 		foreach($this->get('formats', []) as $format) {
 			if ($format['size'] != 0){
-				$getVideo .= '<li>
-					<a class="btn btn-default btn-type disabled" href="#">'.$format['type'].' - '.$format['quality'].'</a>';
+				$getVideo .= '<li class="my-2">
+					<a class="btn btn-light btn-type disabled" href="#">'.$format['type'].' - '.$format['quality'].'</a>';
 				if ($format['show_direct_url'] === true) {
-					$getVideo .= '<a class="btn btn-default btn-download" href="'.$format['direct_url'].'" class="mime"><i class="glyphicon glyphicon-download-alt"></i> Direct</a>';
+					$getVideo .= '<a class="btn btn-light btn-download" href="'.$format['direct_url'].'" class="mime"><i class="icon ion-md-download"></i> Direct</a>';
 				}
 				if ($format['show_proxy_url'] === true) {
-					$getVideo .= '<a class="btn btn-primary btn-download" href="'.$format['proxy_url'].'" class="mime"><i class="glyphicon glyphicon-download-alt"></i> Proxy</a>';
+					$getVideo .= '<a class="btn btn-primary btn-download mr-2" href="'.$format['proxy_url'].'" class="mime"><i class="icon ion-md-download"></i> Proxy</a>';
 				}
-				$getVideo .= '<div class="label label-warning">'.$format['size'].'</div>
-					<div class="label label-default">'.$format['itag'].'</div>
+				$getVideo .= '<div class="badge badge-warning">'.$format['size'].'</div>
+					<div class="badge badge-secondary">'.$format['itag'].'</div>
 				</li>';
 			}
 			else
-				$getVideo .= '<a class="btn btn-danger btn-block" href="#" onclick="location.reload();"><i class="glyphicon glyphicon-refresh"></i> Retry</a>';
+				$getVideo .= '<a class="btn btn-danger btn-block" href="#" onclick="location.reload();"><i class="icon ion-md-refresh"></i> Retry</a>';
 		}
 		$getVideo .= '</ul>';
 		if ($this->get('showMP3Download', false) === true) {
 			$getVideo .= '<h2>Convert and Download to .mp3</h2>
 				<ul class="dl-list">
 					<li>
-						<a class="btn btn-default btn-type disabled" href="#" class="mime">audio/mp3 - '.$this->get('mp3_download_quality').'</a>
-						<a class="btn btn-primary btn-download" href="'.$this->get('mp3_download_url').'" class="mime"><i class="glyphicon glyphicon-download-alt"></i> Convert and Download</a>
+						<a class="btn btn-light btn-type disabled" href="#" class="mime">audio/mp3 - '.$this->get('mp3_download_quality').'</a>
+						<a class="btn btn-primary btn-download" href="'.$this->get('mp3_download_url').'" class="mime"><i class="icon ion-md-download"></i> Convert and Download</a>
 					</li>
 				</ul>';
 		}
 		$getVideo .= '<hr />
 		<p><small>Note that you initiate download either by clicking "Direct" to download from the origin server or by clicking "Proxy" to use this server as proxy.</small></p>';
 		if ($this->get('showBrowserExtensions', false) === true) {
-			$getVideo .= '<p><a href="ytdl.user.js" class="userscript btn btn-mini" title="Install chrome extension to view a Download link to this application on Youtube video pages."> Install Chrome Extension </a></p>';
+			$getVideo .= '<p><a href="ytdl.user.js" class="userscript btn btn-mini btn-light" title="Install chrome extension to view a Download link to this application on Youtube video pages."> Install Chrome Extension </a></p>';
 		}
 	}
 	$getVideo .= '<hr />
